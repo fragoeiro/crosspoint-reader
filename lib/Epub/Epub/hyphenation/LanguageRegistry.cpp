@@ -9,6 +9,7 @@
 #include "generated/hyph-es.trie.h"
 #include "generated/hyph-fr.trie.h"
 #include "generated/hyph-it.trie.h"
+#include "generated/hyph-pt.trie.h"
 #include "generated/hyph-ru.trie.h"
 #include "generated/hyph-uk.trie.h"
 
@@ -18,6 +19,7 @@ namespace {
 LanguageHyphenator englishHyphenator(en_patterns, isLatinLetter, toLowerLatin, 3, 3);
 LanguageHyphenator frenchHyphenator(fr_patterns, isLatinLetter, toLowerLatin);
 LanguageHyphenator germanHyphenator(de_patterns, isLatinLetter, toLowerLatin);
+LanguageHyphenator portugueseHyphenator(pt_patterns, isLatinLetter, toLowerLatin);
 LanguageHyphenator russianHyphenator(ru_patterns, isCyrillicLetter, toLowerCyrillic);
 LanguageHyphenator spanishHyphenator(es_patterns, isLatinLetter, toLowerLatin);
 LanguageHyphenator italianHyphenator(it_patterns, isLatinLetter, toLowerLatin);
@@ -32,7 +34,8 @@ const EntryArray& entries() {
                                        {"russian", "ru", &russianHyphenator},
                                        {"spanish", "es", &spanishHyphenator},
                                        {"italian", "it", &italianHyphenator},
-                                       {"ukrainian", "uk", &ukrainianHyphenator}}};
+                                       {"ukrainian", "uk", &ukrainianHyphenator},
+                                       {"portuguese", "pt", &portugueseHyphenator}}};
   return kEntries;
 }
 
